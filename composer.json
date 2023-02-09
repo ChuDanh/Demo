@@ -7,11 +7,9 @@
     "require": {
         "php": "^8.0",
         "darkaonline/swagger-lume": "9.*",
-        "doctrine/annotations": "^2.0",
         "flipbox/lumen-generator": "^9.1",
         "laravel/lumen-framework": "^9.0",
         "laravel/passport": "^11.6",
-        "tymon/jwt-auth": "*",
         "zircote/swagger-php": "3.*"
     },
     "require-dev": {

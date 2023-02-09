@@ -24,13 +24,16 @@ date_default_timezone_set(env('APP_TIMEZONE', 'UTC'));
 |
 */
 
+
 $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
 
- $app->withFacades();
+$app->withFacades(); 
 
- $app->withEloquent();
+$app->configure('swagger-lume');
+
+$app->withEloquent();
 
 /*
 |--------------------------------------------------------------------------
@@ -52,7 +55,8 @@ $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
     App\Console\Kernel::class
 );
-$app->configure('swagger-lume');
+
+
 /*
 |--------------------------------------------------------------------------
 | Register Config Files
@@ -65,6 +69,7 @@ $app->configure('swagger-lume');
 */
 
 $app->configure('app');
+
 
 /*
 |--------------------------------------------------------------------------
@@ -85,10 +90,6 @@ $app->configure('app');
      'auth' => App\Http\Middleware\Authenticate::class,
  ]);
 
-$app->middleware([
-    App\Http\Middleware\AuthMiddleware::class
-]);
-
 /*
 |--------------------------------------------------------------------------
 | Register Service Providers
@@ -104,8 +105,9 @@ $app->middleware([
  $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 $app->register(\SwaggerLume\ServiceProvider::class);
-$app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
+
 $app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
+
 
 
 

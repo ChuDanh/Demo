@@ -1,0 +1,35 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Toprate App API",
+        "description": "This is document that help you know how to call API to backend.\n *   You can use the api key `Bearer` to test the authorization filters.",
+        "contact": {
+            "name": "TungND",
+            "email": "tungnd@toprate.io"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "",
+            "description": "DEV Environment"
+        },
+        {
+            "url": "",
+            "description": "Production Environment"
+        }
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "description": "Home page",
+                "operationId": "1d90c14bd3e3fa305b72228395d6c5c6",
+                "responses": {
+                    "default": {
+                        "description": "Welcome page"
+                    }
+                }
+            }
+        }
+    }
+}
